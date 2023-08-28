@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio Dados JS</title>
+    <script language="JavaScript">
+        function jogarDado() {
+            let dado = Math.floor((Math.random() * 6) + 1);
+            document.querySelector('#dDado').innerHTML = "<img src='dados/"+dado+".png' width='320px'>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Sorteio Dados JS</h1>
+    <br>
+    <button type="button" onclick="jogarDado()">JOGAR DADO</button>
+    <div id="dDado"></div>
+</body>
+</html>
