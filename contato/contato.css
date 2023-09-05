@@ -14,7 +14,7 @@
 }
 
 .container {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2, 1fr);
     min-height: 100vh;
 }
@@ -38,8 +38,12 @@
 }
 
 form {
-    display: grid;
+    display: flex;
     gap: 1.5rem;
+}
+
+form h1 {
+    display: flex;
 }
 
 form input {

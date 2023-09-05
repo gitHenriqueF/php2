@@ -26,7 +26,7 @@
         </div>
         <div class="container_right">
             <div class="content">
-            <form>
+            <form action="envio.php" method="post">
                 <label for="inome">Nome: </label>
                 <input name="nome" type="text" placeholder="Nome" id="inome">
                 <label for="ifone">Fone: </label>
@@ -36,7 +36,7 @@
                 <label for="iassunto">Assunto: </label>
                 <input name="assunto" type="text" placeholder="Assunto" id="iassunto">
                 <label for="imensagem">Mensagem: </label>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Envie uma mensagem"></textarea>
+                <textarea name="mensagem" id="imensagem" cols="30" rows="10" placeholder="Envie uma mensagem"></textarea>
                 <button class="submit_btn">Enviar</button>
             </form>
             </div>
