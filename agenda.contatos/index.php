@@ -25,10 +25,25 @@
 </head>
 <body>
     <h1>Agenda de contatos</h1>
+    <form id="fbusca" action="index.php" method="get">
+        <input id="ibusca" name="busca" placeholder="Digite algo para buscar">
+        <button name="bbusca" value="busca">OK</button> 
+    </form>
     <?php 
     require_once "conexao.php";
     try {
-        $stmt = $conn->prepare("SELECT * FROM contatos");
+        if (empty($_GET["busca"])) {
+               //busca todos os dados da tabela
+               $stmt = $conn->prepare("SELECT * FROM contatos");
+        } else {
+               //busca os dados da tabela, aplicando a busca digitada pelo usuário
+               //Monta SQL com parametros da busca
+               $sql = "SELECT * FROM contatos WHERE CODIGO = '".$_GET["busca"]
+                      ."' OR NOME LIKE '%".$_GET["busca"]."%'";
+               //echo $sql;
+               echo "<strong>Pesquisando por: </strong><mark>".$_GET["busca"]."</mark>";
+               $stmt = $conn->prepare($sql);
+        }
         $stmt->execute();
        echo("<br><ul>");
        foreach ($stmt as $linha) {
