@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Alterar Contato</title>
     <script language="JavaScript">
         function cancelar() {
@@ -31,10 +33,10 @@
         <input id="icodigo" name="codigo" type="hidden" value="<?=$contatos['codigo']?>">
         <label for="inome">Nome: </label>
         <input type="text" id="inome" name="nome"size="100" value="<?=$contatos['nome']?>"required>
-        <br>
+        <br><br>
         <label for="itelefone">Telefone: </label>
         <input type="number" id="itelefone" name="telefone"size="100" value="<?=$contatos['telefone']?>"required>
-        <br>
+        <br><br>
         <label for="iemail">Email: </label>
         <input type="text" id="iemail" name="email"size="100" value="<?=$contatos['email']?>"required>
         <br><br>

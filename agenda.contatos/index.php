@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="./estilo.css">
     <title>Agenda de contatos</title>
     <script language="JavaScript">
         function incluir() {
@@ -25,9 +27,10 @@
 </head>
 <body>
     <h1>Agenda de contatos</h1>
+    <br>
     <form id="fbusca" action="index.php" method="get">
         <input id="ibusca" name="busca" placeholder="Digite algo para buscar">
-        <button name="bbusca" value="busca">OK</button> 
+        <button name="bbusca" value="busca"><img src="./img/lupa.png"></button> 
     </form>
     <?php 
     require_once "conexao.php";
@@ -49,11 +52,11 @@
        foreach ($stmt as $linha) {
            echo("<li>");
            //echo("<a href='item.php/?contatos=".$linha["codigo"]."'>".$linha["codigo"]);
-           echo(" - ".$linha["nome"]."</a>");
+           echo(" => ".$linha["nome"]."<br> Email: ".$linha["email"]."<br> Telefone: ".$linha["telefone"]."</a>");
            echo("&nbsp;&nbsp;");
-           echo("<button onclick='alterar(".$linha["codigo"].")'><img src='pencil.png'></button>");
+           echo("<button onclick='alterar(".$linha["codigo"].")'><img src='./img/pencil.png'></button>");
            echo("&nbsp;&nbsp;");
-           echo("<button onclick='apagar(".$linha["codigo"].")'><img src='lixeira.png'></button></li>");
+           echo("<button onclick='apagar(".$linha["codigo"].")'><img src='./img/lixeira.png'></button></li>");
        }
        echo("</ul><br>");
        $conn = null;
@@ -64,6 +67,7 @@
      }
     ?>
     <br>
-    <button name="bincluir" id="bincluir" type="button" onclick="incluir()">Novo contato</button>
+    <img src="./img/mais.png">
+    <button name="bincluir" id="bincluir" type="button" onclick="incluir()">Novo contato </button>
 </body>
 </html>
